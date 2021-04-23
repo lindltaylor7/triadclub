@@ -7,16 +7,24 @@ use Illuminate\Http\Request;
 use App\Models\Empresa;
 use App\Models\Image;
 use App\Models\Oferta;
+use App\Models\Rede;
 use App\Models\Rubro;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class EmpresaController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
+        $user = $request->user();
+        if(isset($user)){
+            $empresa = Empresa::where('user_id',$user->id);
+            return view('welcome', compact('empresa'));
+        }else{
+            return view('welcome');
+        }
 
         //return $sliders;
-        $empresas = Empresa::all();
-        return view('welcome');
+
     }
 
     public function register(){
@@ -39,6 +47,14 @@ class EmpresaController extends Controller
 
         $user = User::create($request->all());
         return view('empresa', compact('user'));
+    }
+
+
+    public function landing($empresa){
+
+        $data_emp=Empresa::where('user_id',$empresa)->first();
+        $redes = Rede::where('empresa_id',$data_emp->id)->first();
+        return view('landing', compact('data_emp','redes'));
     }
 
     public function regEnt(Request $request){

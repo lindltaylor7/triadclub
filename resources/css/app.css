@@ -2,6 +2,7 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 @import 'common.css';
+@import 'styles.css';
 
 @font-face {
     font-family: 'Axiforma';
@@ -72,7 +73,7 @@ h1{
     width: 100%;
     height: auto;
     /* transform: translateX(-1220px); */
-    
+
 }
 
 .carousel{
@@ -113,14 +114,14 @@ h1{
     /* border: 4px solid rgba(249, 249, 249, 0.8); */
 }
 .slider:hover{
-    
+
     border-radius: 4px;
     background-color: tomato;
-    
- 
+
+
 }
 .link-slider{
-    
+
     position: absolute;
     background-color: rgba(255, 255, 255, 0.027);
     top:0px;
@@ -162,10 +163,10 @@ h1{
     justify-content: center;
     margin-top: 7vh;
     height: 90%;
-    background-image: linear-gradient(#0c4574,#045CA4); 
+    background-image: linear-gradient(#0c4574,#045CA4);
     width: 17%;
     border-radius: 14px;
-  
+
     border: 4px solid rgba(255, 255, 255, 0.445);
 }
 .rubro:hover{

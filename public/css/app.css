@@ -32706,6 +32706,750 @@ select {
   }
 }
 
+*{
+  box-sizing: border-box;
+}
+
+body{
+  /*background-color: #002041;*/
+  background: #0780E3;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  font-family: 'Axiforma';
+  overflow-x: hidden;
+}
+
+header{
+  margin: 0px 0px;
+  padding: 0;
+  width: 100%;
+  height: 72px;
+  background-color: #0780e300;
+  display: flex;
+  position: fixed;
+  z-index: 99;
+  top: 0;
+}
+
+.navbar-main{
+  padding: 0px 36px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.navbar-main ul{
+  padding: 0;
+  margin: 0;
+  height:100%;
+  list-style: none;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  position: relative;
+  top: 0;
+}
+
+.navbar-main ul img{
+  list-style: none;
+  text-decoration: none;
+  width: 10%;
+  margin-right: 32px;
+}
+
+.navbar-main ul span{
+  text-decoration: none;
+  display: flex;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-main ul span a{
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-flow: row nowrap;
+  flex: 1 1 0%;
+  text-decoration: none;
+  color: #fff;
+}
+
+.navbar-main ul span a i{
+  display: inline;
+  text-rendering: auto;
+}
+
+.navbar-main ul span a p{
+  text-decoration: none;
+  color:#fff;
+  font-size: 13px;
+  font-weight: 100;
+  margin-left: 8px;
+  padding: 2px 0px;
+}
+
+.navbar-main ul span a p::after{
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: #fff;
+  transition: width .3s;
+}
+
+.navbar-main ul span a p:hover::after{
+  width: 100%;
+  transition: width .3s;
+}
+
+#nav-user{
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+  right: 10px;
+}
+
+#nav-user a{
+  text-decoration: none;
+  color:#fff;
+  font-size: 13px;
+}
+
+/*
+.navbar-main li{
+
+}
+
+.navbar-main li a{
+    text-decoration: none;
+    color:#fff;
+    font-size: 20px;
+
+} */
+
+.logo{
+  width: 95px !important;
+  height: 37px;
+}
+
+.slick-dots{
+  bottom: 10px !important;
+  right: 90px;
+  text-align: right !important;
+}
+
+.slick-dots li button:before{
+  font-size: 15px !important;
+  color:white !important;
+}
+
+.anuncia{
+  width: 120px;
+  height: 40px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:  #045CA4;
+  transition: width 1.5s, font-size 1.5s;
+}
+
+.carousel-rail{
+  display: block;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  /* transform: translateX(-1220px); */
+}
+
+.carousel{
+  display: inline-block;
+  position: relative;
+  border-radius: 4px;
+  height: 100%;
+  margin: 0px 10px 0px 10px;
+  cursor: pointer;
+}
+
+.carousel::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-shadow: inset 0 0 0 0 rgba(255,255,255,.5);
+  transition: box-shadow .2s ease;
+  border-radius: 4px;
+}
+
+.carousel:hover::after{
+  border-radius: 4px;
+  box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.76);
+}
+
+.slider{
+  position: relative;
+  display: block;
+  z-index: -1;
+  width:100%;
+  height: 100%;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: 4px solid rgba(255, 255, 255, 0);
+  -webkit-animation: fadeIn;
+          animation: fadeIn; /* referring directly to the animation's @keyframe declaration */
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s
+  /* border: 4px solid rgba(249, 249, 249, 0.8); */
+}
+
+.slider:hover{
+  border-radius: 4px;
+  background-color: tomato;
+}
+
+.link-slider{
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.027);
+  top:0px;
+  z-index: 3;
+  width:100%;
+  height: 100%;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+  -webkit-animation: fadeIn;
+          animation: fadeIn; /* referring directly to the animation's @keyframe declaration */
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s
+}
+
+.btn-carousel-back{
+  position: absolute;
+  top: 69px;
+  left: 0px;
+  z-index: 22;
+  width: 75px;
+  height: 300px;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  color: white;
+  font-size: 30px;
+  outline:none;
+}
+
+.btn-carousel-next{
+  position: absolute;
+  top: 69px;
+  right: 0px;
+  z-index: 22;
+  width: 75px;
+  height: 300px;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  color: white;
+  font-size: 30px;
+  outline:none;
+}
+
+.list-slider{
+  position: absolute;
+  z-index: 23;
+  top: 320px;
+  right: 100px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.list-slider li{
+  display: inline;
+}
+
+.btn-slider{
+  background: transparent;
+  cursor: pointer;
+  border: none;
+  height: 20px;
+  width: 20px;
+  outline:none;
+}
+
+.btn-slider::before{
+  content: "•";
+  font-size: 40px;
+  height: 20px;
+  color: rgb(249, 249, 249);
+}
+
+.slick-prev{
+  left:0px !important;
+  z-index: 30;
+  background-color: rgba(255, 255, 255, 0) !important;
+  height: 100% !important;
+  width: 5% !important;
+}
+
+.slick-next{
+  right:0px !important;
+  z-index: 30;
+  background-color: rgba(255, 255, 255, 0) !important;
+  height: 100% !important;
+  width: 5% !important;
+}
+
+.caption{
+  position: absolute;
+  z-index: 3;
+  top: 100px;
+  left: 70px;
+  -webkit-animation: fadeInLeft;
+          animation: fadeInLeft; /* referring directly to the animation's @keyframe declaration */
+  -webkit-animation-duration: .5s;
+          animation-duration: .5s
+}
+
+.carousel img:hover{
+}
+
+.main{
+  padding: 0px 0px;
+  margin-top: 13vh;
+}
+
+.esconder{
+  display: none !important;
+}
+
+.mostrar{
+  display: block;
+}
+
+.buscador{
+  margin-top: 1vh;
+  width: 100%;
+}
+
+.input-search{
+  background-color: #045CA4;
+  width: 100%;
+  border: hidden;
+  padding-left: 10%;
+  font-size: 50px;
+  color: white;
+  font-family: Axiforma;
+  outline: none;
+}
+
+.input-search-buscar{
+  background-color: #045CA4;
+  width: 100%;
+  border: hidden;
+  padding-left: 10%;
+  font-size: 50px;
+  color: white;
+  font-family: Axiforma;
+  outline: none;
+}
+
+::-moz-placeholder {
+  color: white;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  color: white;
+  opacity: 1; /* Firefox */
+}
+
+::placeholder {
+  color: white;
+  opacity: 1; /* Firefox */
+}
+
+.rubros{
+  position: relative;
+  background-color: transparent;
+  height: 22vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 7vh;
+}
+
+.rubro{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 7vh;
+  height: 90%;
+  background-image: linear-gradient(#0c4574,#045CA4);
+  width: 17%;
+  border-radius: 14px;
+  border: 4px solid rgba(255, 255, 255, 0.445);
+}
+
+.rubro:hover{
+  background: transparent;
+  border-radius: 14px;
+  border: 4px solid rgba(255, 255, 255, 0.678);
+  transform: scale(1.1);
+  transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s !important;
+  cursor:pointer;
+}
+
+.rubro video{
+  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  border-radius: 10px;
+}
+
+.rubro-head{
+  text-align: center;
+  font-size: 50px;
+}
+
+.logo-rubro{
+  display: flex;
+  width: 100%;
+}
+
+.footer{
+  background: black;
+  height: auto;
+  display: flex;
+  position: relative;
+  bottom: 0px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.footer-logo{
+  display: flex;
+  justify-content: center;
+}
+
+.footer img{
+  position: relative;
+  top: 20px;
+  width: 10%;
+}
+
+.footer-links{
+  display: flex;
+  justify-content: center;
+  font-size: 12px;
+  margin: 35px 30%;
+  text-align: justify;
+}
+
+.footer-brand{
+  display: flex;
+  justify-content: center;
+  font-weight: 100;
+  font-size: 10px;
+  padding-bottom: 20px;
+}
+
+.empresas{
+  position: relative;
+  display: block;
+  bottom: 0%;
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.titulo-empresas{
+  font-size: 20px;
+  margin-left: 5%;
+}
+
+.empresa-head{
+  height: 100vh;
+  display: flex;
+  justify-content:flex-start;
+  align-items: center;
+}
+
+.fondo-empresa{
+  width: 100%;
+  position: fixed;
+  z-index: 0;
+}
+
+.caption-empresa{
+  position: absolute;
+  width: 30% ;
+  height: auto ;
+  z-index: 3;
+  top: 40%;
+  left: 8%;
+}
+
+.action-buttons{
+  position: absolute;
+  bottom: 0;
+  left: 8%;
+  margin-bottom: 7%;
+  width: 50%;
+  height: 20%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn-sociales{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.action-buttons button{
+  width: 330px;
+  height: 50%;
+  background-color: rgb(249, 249, 249);
+  color: #000;
+  border: none;
+  font-size: 15px;
+  letter-spacing: 1.5px;
+  font-family: Axiforma;
+  outline: none;
+  margin: 10px;
+  padding: 7px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.social-btn{
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 116, 210, 0.336);
+  color: rgb(249, 249, 249);
+  border: none;
+  font-size: 15px;
+  letter-spacing: 1.5px;
+  margin-right: 6px;
+  font-family: Axiforma;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 2px ;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  .navbar-main{
+    padding: 0px 0px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbar-main ul span a{
+    padding: 0px 3px;
+  }
+
+  .navbar-main ul{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .navbar-main ul img{
+    margin-left: 7px;
+    margin-right: 6px;
+  }
+
+  .navbar-main ul span a p{
+    display: none;
+  }
+
+  #nav-user{
+    list-style: none;
+    display: flex;
+    width: 30%;
+    justify-content: center;
+    position: relative;
+    right: 0px;
+  }
+
+  #nav-user a{
+    padding: 10px;
+    text-decoration: none;
+    color:#fff;
+    text-align: center;
+    font-size: 13px;
+  }
+
+  .buscador{
+    margin-top: 2vh;
+    width: 100%;
+  }
+
+  .empresas{
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  .titulo-empresas p{
+    margin: 15px 0px;
+  }
+
+  .input-search{
+    background-color: #045CA4;
+    width: 100%;
+    border: hidden;
+    padding-left: 10%;
+    font-size: 30px;
+    color: white;
+    font-family: Axiforma;
+    outline: none;
+  }
+
+  .input-search-buscar{
+    background-color: #045CA4;
+    width: 100%;
+    border: hidden;
+    padding-left: 10%;
+    margin-top: 10vh;
+    font-size: 30px;
+    color: white;
+    font-family: Axiforma;
+    outline: none;
+  }
+
+  .rubros{
+    position: relative;
+    background-color: transparent;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 0vh;
+  }
+
+  .caption{
+    position: absolute;
+    height: 30%;
+    z-index: 3;
+    top: 35%;
+    left: 10%;
+    -webkit-animation: fadeInLeft;
+            animation: fadeInLeft; /* referring directly to the animation's @keyframe declaration */
+    -webkit-animation-duration: .5s;
+            animation-duration: .5s
+  }
+
+  .rubro{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 3vh;
+    height: 90%;
+    background-image: linear-gradient(#0c4574,#045CA4);
+    width: 19%;
+    border-radius: 14px;
+    border: 2px solid rgba(255, 255, 255, 0.445);
+  }
+
+  .rubro-head h1{
+    margin: 70px 0px -20px 0px;
+  }
+
+  .navbar-main ul img{
+    list-style: none;
+    text-decoration: none;
+    width: 30%;
+  }
+
+  .navbar-main ul li{
+    text-decoration: none;
+    width: 20%;
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navbar-main ul li i{
+    margin-right: 0px;
+  }
+
+  .navbar-main li a{
+    text-decoration: none;
+    font-size: 0;
+    color: transparent;
+    font-weight: 100;
+  }
+
+  .footer-links{
+    display: flex;
+    justify-content: center;
+    font-size: 12px;
+    margin: 35px 10%;
+    text-align: justify;
+  }
+
+  .empresa-head{
+    height: 70vh;
+  }
+
+  .fondo-empresa{
+    top:0px;
+    height: 100vh;
+    opacity: 0.8;
+  }
+
+  .caption-empresa{
+    top:20%;
+    height: auto;
+    width: 80%;
+  }
+
+  .action-buttons{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    bottom: 33%;
+    left: 0;
+  }
+
+  .action-buttons button{
+    height: 70%;
+  }
+
+  .btn-sociales{
+    margin-top:10px;
+  }
+}
+
 @font-face {
   font-family: 'Axiforma';
 
@@ -192187,3 +192931,4 @@ h1{
             animation: bounce 1s infinite;
   }
 }
+

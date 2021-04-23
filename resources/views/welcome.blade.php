@@ -11,4 +11,6 @@
 
     @livewire('carousel-secondary')
 
+    @livewire('carousel-secondary')
+
 </x-app-layout>

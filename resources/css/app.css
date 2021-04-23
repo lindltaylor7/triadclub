@@ -1,0 +1,188 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import 'common.css';
+
+@font-face {
+    font-family: 'Axiforma';
+
+    src: url('/fonts/Axiforma-Medium.ttf');
+
+}
+
+body{
+    font-family: 'Axiforma';
+}
+
+h1{
+    font-family: 'Axiforma';
+}
+
+.link-nav::after{
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    transition: width .3s;
+}
+.link-nav:hover::after{
+    width: 100%;
+    transition: width .3s;
+}
+
+.slick-prev{
+
+    left:0px !important;
+    z-index: 30;
+    background-color: rgba(255, 255, 255, 0) !important;
+    height: 100% !important;
+    width: 5% !important;
+}
+
+.slick-next{
+
+    right:0px !important;
+    z-index: 30;
+    background-color: rgba(255, 255, 255, 0) !important;
+    height: 100% !important;
+    width: 5% !important;
+}
+
+.slick-dots{
+    bottom: 10px !important;
+    right: 90px;
+    text-align: right !important;
+}
+
+.slick-dots li button:before{
+    font-size: 15px !important;
+    color:white !important;
+}
+
+.main{
+    padding: 0px 0px;
+    margin-top: 13vh;
+}
+
+
+.carousel-rail{
+    display: block;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    /* transform: translateX(-1220px); */
+    
+}
+
+.carousel{
+    display: inline-block;
+    position: relative;
+    border-radius: 4px;
+    height: 100%;
+    margin: 0px 10px 0px 10px;
+    cursor: pointer;
+}
+.carousel::after{
+    content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-shadow: inset 0 0 0 0 rgba(255,255,255,.5);
+  transition: box-shadow .2s ease;
+  border-radius: 4px;
+}
+.carousel:hover::after{
+    border-radius: 4px;
+    box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.76);
+}
+
+.slider{
+    position: relative;
+    display: block;
+    z-index: -1;
+    width:100%;
+    height: 100%;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: 4px solid rgba(255, 255, 255, 0);
+    animation: fadeIn; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 1s
+    /* border: 4px solid rgba(249, 249, 249, 0.8); */
+}
+.slider:hover{
+    
+    border-radius: 4px;
+    background-color: tomato;
+    
+ 
+}
+.link-slider{
+    
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.027);
+    top:0px;
+    z-index: 3;
+    width:100%;
+    height: 100%;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+    animation: fadeIn; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 1s
+}
+.caption{
+    position: absolute;
+    z-index: 3;
+    top: 100px;
+    left: 70px;
+}
+
+.caption-rigth{
+    position: absolute;
+    z-index: 3;
+    top: 100px;
+    right: 70px;
+}
+
+.rubros{
+    position: relative;
+    background-color: transparent;
+    height: 22vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 7vh;
+}
+.rubro{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 7vh;
+    height: 90%;
+    background-image: linear-gradient(#0c4574,#045CA4); 
+    width: 17%;
+    border-radius: 14px;
+  
+    border: 4px solid rgba(255, 255, 255, 0.445);
+}
+.rubro:hover{
+    background: transparent;
+    border-radius: 14px;
+    border: 4px solid rgba(255, 255, 255, 0.678);
+    transform: scale(1.1);
+    transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s !important;
+    cursor:pointer;
+}
+
+.rubro img{
+    position: absolute;
+    object-fit: cover;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    border-radius: 10px;
+}

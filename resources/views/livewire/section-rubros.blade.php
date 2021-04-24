@@ -1,10 +1,24 @@
 <div class="rubros">
+    {{--
     <div class="rubro">
     <a class="text-white text-2xl py-9" href="rubros.html">
         ABOGADOS
         </a>
       <video muted autoplay loop src="{{Storage::url('rubros/edu.mp4')}}" alt="">
     </div>
+     --}}
+  
+      
+      @foreach ($nombres as $nombre)
+        <div class="rubro">
+        <a class="text-white text-2xl py-9" href="rubros.html">
+            {{$nombre}}
+            </a>
+          <video muted autoplay loop src="{{Storage::url('rubros/edu.mp4')}}" alt="">
+        </div>
+      @endforeach
+        
+    {{--
     <div class="rubro">
         <a class="text-white text-2xl py-9" href="rubros.html">
            ARTESANIA
@@ -23,6 +37,6 @@
              </a>
       <img src="{{Storage::url('rubros/hoteles.gif')}}" alt="">
     </div>
-
+    --}}
   </div>
 

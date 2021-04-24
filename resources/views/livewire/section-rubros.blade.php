@@ -3,7 +3,7 @@
     <a class="text-white text-2xl py-9" href="rubros.html">
         ABOGADOS
         </a>
-      <img src="{{Storage::url('rubros/abogados.gif')}}" alt="">
+      <video muted autoplay loop src="{{Storage::url('rubros/edu.mp4')}}" alt="">
     </div>
     <div class="rubro">
         <a class="text-white text-2xl py-9" href="rubros.html">

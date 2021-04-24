@@ -1,6 +1,8 @@
     <div class="empresas-rail top-5 mb-10 w-full">
+
+        @foreach ($sliders as $slider)
         <div class="slick-slide carousel">
-            <img src="{{ Storage::url('empresas/logo1.png') }}" id="img1" alt="carousel" class="slider" />
+            <img src="{{ Storage::url($slider->url) }}" id="img1" alt="carousel" class="slider" />
 
             <a href="#" class="link-slider">
 
@@ -8,49 +10,8 @@
 
             </a>
         </div>
-        <div class="slick-slide carousel">
-            <img src="{{ Storage::url('empresas/logo2.png') }}" id="img1" alt="carousel" class="slider" />
-            <a href="#" class="link-slider">
+        @endforeach
 
-
-
-            </a>
-        </div>
-        <div class="slick-slide carousel">
-            <img src="{{ Storage::url('empresas/logo3.png') }}" id="img1" alt="carousel" class="slider" />
-            <a href="#" class="link-slider">
-
-
-
-            </a>
-        </div>
-        <div class="slick-slide carousel">
-            <img src="{{ Storage::url('empresas/logo4.png') }}" id="img1" alt="carousel" class="slider" />
-            <a href="#" class="link-slider">
-
-
-
-            </a>
-        </div>
-        <div class="slick-slide carousel">
-            <img src="{{ Storage::url('empresas/logo5.png') }}" id="img1" alt="carousel" class="slider" />
-
-            <a href="#" class="link-slider">
-
-
-
-            </a>
-        </div>
-
-        <div class="slick-slide carousel">
-            <img src="{{ Storage::url('empresas/logo6.png') }}" id="img1" alt="carousel" class="slider" />
-
-            <a href="#" class="link-slider">
-
-
-
-            </a>
-        </div>
 
 
 

@@ -6,6 +6,9 @@ use Livewire\Component;
 
 class CarouselSecondary extends Component
 {
+
+    public $sliders;
+
     public function render()
     {
         return view('livewire.carousel-secondary');

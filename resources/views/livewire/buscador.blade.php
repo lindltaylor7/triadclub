@@ -2,11 +2,13 @@
     <input wire:model="search"
         class="w-full bg-blue-600 text-white text-5xl outline-none border border-none pl-20 placeholder-white"
         type="text" placeholder="Busque aquí">
-    {{ $search }}
 
-    @foreach ($empresas as $empresa)
-        <a href="">{{ $empresa->name }}</a>
+    @foreach ($sliders as $slider)
+
+        <img src="{{Storage::url('')}}" alt="">
+
+
     @endforeach
 
-    <livewire:carousel-secondary :sliders="$sliders">
+    {{-- <livewire:carousel-secondary :sliders="$sliders"> --}}
 </div>

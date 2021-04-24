@@ -7,7 +7,7 @@ use Livewire\Component;
 class CarouselSecondary extends Component
 {
 
-    public $sliders;
+    public $empresas;
 
     public function render()
     {

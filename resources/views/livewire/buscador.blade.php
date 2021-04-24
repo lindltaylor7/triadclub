@@ -3,12 +3,32 @@
         class="w-full bg-blue-600 text-white text-5xl outline-none border border-none pl-20 placeholder-white"
         type="text" placeholder="Busque aquí">
 
-    @foreach ($sliders as $slider)
 
-        <img src="{{Storage::url('')}}" alt="">
+        @if ($empresas->first())
+        <div class="flex flex-row mt-3 justify-center">
+            @foreach ($empresas as $empresa)
+                @if ($empresa->logo=="red")
+                <div class="absolute">
+                    <img src="{{Storage::url('empresas/coming.jfif')}}" class="px-4" width="320" height="180" alt="Logo">
+                    <p class="relative">{{$empresa->name}}</p>
+                </div>
 
 
-    @endforeach
+                    @else
+                    <div class="">
+                        <img src="{{Storage::url($empresa->logo)}}" class="res-logo" width="320" height="180px" alt="Logo">
+                        <p class="text-center">{{$empresa->name}}</p>
+                    </div>
 
-    {{-- <livewire:carousel-secondary :sliders="$sliders"> --}}
+                @endif
+
+            @endforeach
+        </div>
+        @else
+
+        <p class="text-center text-3xl">No hay resultados para la busqueda</p>
+
+        @endif
+
+
 </div>

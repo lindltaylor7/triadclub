@@ -11,8 +11,8 @@
 
     @livewire('carousel-secondary')
 
-    @livewire('carousel-secondary')
+    {{-- @livewire('carousel-secondary') --}}
 
-    @livewire('carousel-top')
-
+   {{--  @livewire('carousel-top')
+ --}}
 </x-app-layout>

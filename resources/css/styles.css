@@ -203,6 +203,26 @@ header{
 
 
 }
+
+.res-logo{
+    position: relative;
+    display: block;
+    width:100%;
+    padding: 0px 10px 0px 10px;
+    height: 100%;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: 4px solid rgba(255, 255, 255, 0);
+    animation: fadeIn; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 1s
+    /* border: 4px solid rgba(249, 249, 249, 0.8); */
+}
+.res-logo:hover{
+
+    border-radius: 4px;
+
+
+}
 .link-slider{
 
     position: absolute;
@@ -540,6 +560,11 @@ header{
      .navbar-main ul span a p{
         display: none;
     }
+
+
+
+
+
     #nav-user{
        list-style: none;
        display: flex;

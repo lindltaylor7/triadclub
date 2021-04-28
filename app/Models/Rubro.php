@@ -9,7 +9,7 @@ class Rubro extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name'];
+    protected $fillable = ['name','video'];
 
     //Relacion 1 a muchos
     public function empresas(){

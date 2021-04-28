@@ -3,16 +3,20 @@
 
     @livewire('buscador')
 
-    @livewire('section-rubros')
+    
 
-    @livewire('section-rubros')
+    @livewire('section-rubros', ['i' => 1])
 
-    <h1 class="text-white text-3xl ml-14">Empresas Huancayo</h1>
+    @livewire('section-rubros', ['i' => 2])
 
-    @livewire('carousel-secondary')
+    @livewire('section-rubros', ['i' => 3])
+
+    <h1 class="text-white text-3xl ml-14">Empresas TOP</h1>
 
     {{-- @livewire('carousel-secondary') --}}
 
-   {{--  @livewire('carousel-top')
- --}}
+    {{-- @livewire('carousel-secondary') --}}
+
+    @livewire('carousel-top')
+ 
 </x-app-layout>

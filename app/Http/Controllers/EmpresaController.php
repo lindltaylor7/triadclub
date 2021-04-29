@@ -67,11 +67,19 @@ class EmpresaController extends Controller
 
     }
 
-    public function rubro(Rubro $rubro){
+    public function rubro($id){
 
-        $empresas = Empresa::where('rubro_id',$rubro->id)
-                                ->latest('name')
-                                ->paginate(6);
-        return view('empresas.rubro', compact('empresas','rubro'));
+        $rubro = Rubro::where('id', $id)->first();
+        $empresas = Empresa::where('rubro_id',$id)
+                                ->get();
+        return view('empresas.rubro', compact('empresas','id', 'rubro'));
+        
+    }
+
+    public function ciudad($id)
+    {
+        //$rubros = Rubro::where('name', $id)->get();
+        $empresas=Empresa::where('ciudad', $id)->get();
+        return view('ciudad', compact('empresas', 'id'));
     }
 }

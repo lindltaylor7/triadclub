@@ -25,4 +25,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::get('rubro/{rubro}',[EmpresaController::class,'rubro'])->name('empresas.rubro');
+Route::get('rubro/{id}',[EmpresaController::class,'rubro'])->name('empresas.rubro');
+
+Route::get('ciudad/{id}', [EmpresaController::class, 'ciudad'])->name('ciudad');

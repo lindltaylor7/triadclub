@@ -224,7 +224,7 @@
                 </select>
                 <input type="hidden" name="user_id" value="{{$user->id}}">
                 <label for="">Rubro</label>
-                <select name="rubro" class="input-text" id="">
+                <select name="rubro_id" class="input-text" id="">
                     <option value="1">Educación</option>
                     <option value="2">Restaurantes</option>
                     <option value="3">Salud</option>

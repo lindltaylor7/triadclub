@@ -44,10 +44,14 @@
               <a href="/" class="link-nav text-white px-3 py-2 rounded-md text-sm font-medium"><i class="fas fa-home mr-1"></i>INICIO</a>
               <a href="#"  x-on:click="open = true" class="link-nav text-white px-3 py-2 rounded-md text-sm font-medium"><i class="fas fa-caret-down mr-1"></i>CIUDADES</a>
               <div x-show="open" x-on:click.away="open = false" class="origin-top-left absolute left-52 mt-28 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5" role="menu" aria-orientation="vertical" aria-labelledby="user-menu">
-                <a href="{{route('profile.show')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Huancayo</a>
-                <a href="{{route('admin.home')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Lima</a>
+                <a href="{{route('ciudad','Huancayo')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Huancayo</a>
+                <a href="{{route('ciudad','Lima')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Lima</a>
               </div>
               <a href="#" class="link-nav text-white px-3 py-2 rounded-md text-sm font-medium"><i class="fas fa-plus mr-1"></i>RUBROS</a>
+                <div x-show="open" x-on:click.away="open = false" class="origin-top-left absolute left-72 mt-28 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5" role="menu" aria-orientation="vertical" aria-labelledby="user-menu">
+                  <a href="{{route('empresas.rubro', 1)}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Educación</a>
+                  <a href="{{route('empresas.rubro', 5)}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Tecnología</a>
+                </div>
               <a href="#" class="link-nav text-white px-3 py-2 rounded-md text-sm font-medium"><i class="fas fa-star mr-1"></i>CONTACTO</a>
             </div>
           </div>

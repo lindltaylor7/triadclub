@@ -7,13 +7,13 @@
     {{$ejemplo}} --}}
 
         @if ($empresas->first())
-        <div class="flex flex-row mt-3 mb-5 justify-center">
+        <div class="flex flex-row mt-3 mb-5 justify-start">
             @foreach ($empresas as $empresa)
 
 
-                    <div class="">
+                    <div class="flex flex-col justify-center items-center">
                         <img src="{{Storage::url($empresa->logo)}}" class="res-logo" width="100%" alt="Logo">
-
+                        <p>{{$empresa->name}}</p>
                     </div>
 
 

@@ -6,7 +6,7 @@
     @livewire('carousel-top')
 
     <section class="rubro-head mt-20">
-        <h1>{{$rubro->name}}</h1>
+        <h1>{{$id}}</h1>
       </section>
     @livewire('carousel-city', ['empresas' => $empresas])
     

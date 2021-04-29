@@ -1,6 +1,8 @@
 <div class="empresas-rail top-5 mb-10 w-full">
+        @foreach ($empresas as $empresa)
+
         <div class="slick-slide carousel">
-            <img src="{{ Storage::url('empresas/logo-field.jpg') }}" id="img1" alt="carousel" class="slider" />
+            <img src="{{ Storage::url($empresa->logo) }}" id="img1" alt="carousel" class="slider" />
 
             <a href="#" class="link-slider">
 
@@ -8,58 +10,14 @@
 
             </a>
         </div>
-        <div class="slick-slide carousel">
-            <img src="{{ Storage::url('empresas/logo-gloria.jpg') }}" id="img1" alt="carousel" class="slider" />
-            <a href="#" class="link-slider">
-
-
-
-            </a>
-        </div>
-        <div class="slick-slide carousel">
-            <img src="{{ Storage::url('empresas/logo-inka.png') }}" id="img1" alt="carousel" class="slider" />
-            <a href="#" class="link-slider">
-
-
-
-            </a>
-        </div>
-        <div class="slick-slide carousel">
-            <img src="{{ Storage::url('empresas/logo-pardos.png') }}" id="img1" alt="carousel" class="slider" />
-            <a href="#" class="link-slider">
-
-
-
-            </a>
-        </div>
-        <div class="slick-slide carousel">
-            <img src="{{ Storage::url('empresas/logo-curacao.png') }}" id="img1" alt="carousel" class="slider" />
-
-            <a href="#" class="link-slider">
-
-
-
-            </a>
-        </div>
-
-        <div class="slick-slide carousel">
-            <img src="{{ Storage::url('empresas/logo-porta.jpg') }}" id="img1" alt="carousel" class="slider" />
-
-            <a href="#" class="link-slider">
-
-
-
-            </a>
-        </div>
-
-
+        @endforeach
 
 
     </div>
     <script>
         $(document).ready(function() {
             $(".empresas-rail").slick({
-                infinite: false,
+                infinite: true,
                 slidesToShow: 4,
 
                 responsive: [{

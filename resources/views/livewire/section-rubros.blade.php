@@ -9,14 +9,18 @@
      --}}
   
       
-      @foreach ($nombres as $nombre)
-        <div class="rubro">
-        <a class="text-white text-2xl py-9" href="rubros.html">
-            {{$nombre}}
-            </a>
-          <video muted autoplay loop src="{{Storage::url('rubros/edu.mp4')}}" alt="">
-        </div>
+      @foreach ($rubros as $rubro)
+          <div class="rubro">
+        
+              <a class="text-white text-2xl py-9" href="rubros.html">
+              {{$rubro->name}}
+              </a>
+            <video muted autoplay loop src="{{Storage::url($rubro->video)}}" alt="">
+          </div>
+       
       @endforeach
+
+
         
     {{--
     <div class="rubro">

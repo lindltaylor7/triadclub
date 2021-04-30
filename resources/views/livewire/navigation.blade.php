@@ -38,7 +38,7 @@
             </a>
           {{-- menu-lg --}}
           <div class="hidden sm:block sm:ml-6">
-            <div class="flex space-x-4 items-center" x-data="{open:false}">
+            <div class="flex space-x-4 items-center" x-data="{abrir:false, open:false}">
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
               {{-- <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Dashboard</a> --}}
               <a href="/" class="link-nav text-white px-3 py-2 rounded-md text-sm font-medium"><i class="fas fa-home mr-1"></i>INICIO</a>
@@ -47,8 +47,8 @@
                 <a href="{{route('ciudad','Huancayo')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Huancayo</a>
                 <a href="{{route('ciudad','Lima')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Lima</a>
               </div>
-              <a href="#" class="link-nav text-white px-3 py-2 rounded-md text-sm font-medium"><i class="fas fa-plus mr-1"></i>RUBROS</a>
-                <div x-show="open" x-on:click.away="open = false" class="origin-top-left absolute left-72 mt-28 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5" role="menu" aria-orientation="vertical" aria-labelledby="user-menu">
+              <a href="#" x-on:click="abrir = true" class="link-nav text-white px-3 py-2 rounded-md text-sm font-medium"><i class="fas fa-plus mr-1"></i>RUBROS</a>
+                <div x-show="abrir" x-on:click.away="abrir = false" class="origin-top-left absolute left-80 mt-28 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5" role="menu" aria-orientation="vertical" aria-labelledby="user-menu">
                   <a href="{{route('empresas.rubro', 1)}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Educación</a>
                   <a href="{{route('empresas.rubro', 5)}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Tecnología</a>
                 </div>
@@ -90,7 +90,7 @@
           <a href="{{route('profile.show')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Tu perfil</a>
           <a href="{{route('admin.home')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Administrador</a>
           <a href="{{route('landing',auth()->user()->id)}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Mi Landing</a>
-          <a href="{{route('admin.home')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Mi Dashboard</a>
+          <a href="{{route('dash.redes.index', 5)}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Mi Dashboard</a>
           <form method="POST" action="{{ route('logout') }}">
             @csrf
             <a href="{{ route('logout') }}"

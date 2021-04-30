@@ -16,6 +16,8 @@ Route::post('/registro',[EmpresaController::class, 'regUser'])->name('reg');
 
 Route::post('/registro-empresa',[EmpresaController::class, 'regEnt'])->name('reg2');
 
+Route::post('/registro-social',[EmpresaController::class, 'regSoc'])->name('reg3');
+
 Route::get('landing/{empresa}',[EmpresaController::class, 'landing'])->name('landing');
 
 

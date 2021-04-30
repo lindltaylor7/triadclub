@@ -53,8 +53,12 @@ class EmpresaController extends Controller
     public function landing($empresa){
 
         $data_emp=Empresa::where('user_id',$empresa)->first();
+        
         $redes = Rede::where('empresa_id',$data_emp->id)->first();
+
         return view('landing', compact('data_emp','redes'));
+      
+      
     }
 
     public function regEnt(Request $request){
@@ -62,6 +66,16 @@ class EmpresaController extends Controller
 
 
         $empresa=Empresa::create($request->all());
+
+        return view('social', compact('empresa'));
+
+    }
+
+    public function regSoc(Request $request){
+
+
+
+        $redes=Rede::create($request->all());
 
         return view('auth.login');
 

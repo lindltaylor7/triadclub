@@ -90,7 +90,7 @@
           <a href="{{route('profile.show')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Tu perfil</a>
           <a href="{{route('admin.home')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Administrador</a>
           <a href="{{route('landing',auth()->user()->id)}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Mi Landing</a>
-          <a href="{{route('dash.redes.index', 5)}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Mi Dashboard</a>
+          <a href="{{route('dashboard.index',auth()->user()->id)}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Mi Dashboard</a>
           <form method="POST" action="{{ route('logout') }}">
             @csrf
             <a href="{{ route('logout') }}"

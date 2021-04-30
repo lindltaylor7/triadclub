@@ -1,8 +1,8 @@
 @extends('layouts.plantillabase')
 
 @section('content')
-    <div class="container">
-    <a href="redes/create" class="btn btn-primary">Botón Crear</a>
+
+    <a href="{{route('index')}}" class="btn btn-danger">SALIR</a>
     <table class="table table-dark table-striped mt-4">
         <thead>
             <tr>
@@ -11,23 +11,25 @@
                 <th scope="col">INSTAGRAM</th>
                 <th scope="col">YOUTUBE</th>
                 <th scope="col">WEB</th>
+                <th scope="col">Operaciones</th>
             </tr>
         </thead>
         <tbody>
-           
+                @foreach ($redes as $rede)
                 <tr>
-                    <td>{{$redes->id}}</td>
-                    <td>{{$redes->fb}}</td>
-                    <td>{{$redes->ig}}</td>
-                    <td>{{$redes->video_yt}}</td>
-                    <td>{{$redes->web}}</td>
+                    <td>{{$rede->id}}</td>
+                    <td>{{$rede->fb}}</td>
+                    <td>{{$rede->ig}}</td>
+                    <td>{{$rede->video_yt}}</td>
+                    <td>{{$rede->web}}</td>
                     <td>
-                        <a href="{{route('dash.redes.edit', $redes)}}" class="btn btn-primary">Editar</a>
-                        <button class="btn btn-danger">Borrar</button>
+                        <a href="{{route('dash.redes.edit', $rede)}}" class="btn btn-primary">Editar</a>
                     </td>
                 </tr>
-            
+                @endforeach
+
+
         </tbody>
     </table>
-    </div>
+
 @endsection

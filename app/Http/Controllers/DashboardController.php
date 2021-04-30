@@ -13,12 +13,14 @@ class DashboardController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($user)
+    public function index(Request $request)
     {
-        $empresa = Empresa::where('user_id', $user)->first();
-        $redes = Rede::where('empresa_id', $empresa->id)->first();
-        //return view('dashboard.index', compact('redes'));
-        return $user;
+
+        $user = $request->user();
+        $empresa = Empresa::where('user_id', $user->id)->first();
+        $redes = Rede::where('empresa_id', $empresa->id)->get();
+        return view('dashboard.index', compact('redes'));
+
     }
 
     /**
@@ -61,7 +63,7 @@ class DashboardController extends Controller
      */
     public function edit(Rede $rede)
     {
-        return view('dashboard.edit', compact('rede'));
+       return view('dashboard.edit', compact('rede'));
     }
 
     /**
@@ -71,9 +73,11 @@ class DashboardController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Rede $rede)
     {
-        //
+        $rede->update($request->all());
+
+        return redirect()->route('dash.redes.index');
     }
 
     /**

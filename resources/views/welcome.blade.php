@@ -3,6 +3,7 @@
 
     @livewire('buscador')
 
+
     @livewire('section-rubros', ['i' => 1])
 
     @livewire('section-rubros', ['i' => 2])
@@ -16,5 +17,5 @@
     {{-- @livewire('carousel-secondary') --}}
 
     @livewire('carousel-top')
- 
+
 </x-app-layout>

@@ -53,12 +53,12 @@ class EmpresaController extends Controller
     public function landing($empresa){
 
         $data_emp=Empresa::where('user_id',$empresa)->first();
-        
+
         $redes = Rede::where('empresa_id',$data_emp->id)->first();
 
         return view('landing', compact('data_emp','redes'));
-      
-      
+
+
     }
 
     public function regEnt(Request $request){
@@ -87,7 +87,7 @@ class EmpresaController extends Controller
         $empresas = Empresa::where('rubro_id',$id)
                                 ->get();
         return view('empresas.rubro', compact('empresas','id', 'rubro'));
-        
+
     }
 
     public function ciudad($id)

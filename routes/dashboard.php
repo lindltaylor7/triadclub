@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 
-//Route::get('index',[DashboardController::class, 'index'])->name('dashboard.index');
+Route::get('redes/{id}',[DashboardController::class, 'index'])->name('dashboard.index');
 
 //Route::get('redes/create', [DashboardController::class, 'create'])->name('dashboard.create');
 

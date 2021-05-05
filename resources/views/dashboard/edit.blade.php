@@ -1,3 +1,4 @@
+
 @extends('layouts.plantillabase')
 
 @section('content')
@@ -28,5 +29,6 @@
             <button type="submit" class="btn btn-primary">Actualizar</button>
         </form>
         <a href="{{route('dash.redes.index')}}" class="btn btn-danger">Atrás</a>
+        <a href="{{route('dash.redes.edit', $rede)}}" class="btn btn-primary">Editar</a>
     </div>
 @endsection

@@ -18,8 +18,8 @@ class DashboardController extends Controller
 
         $user = $request->user();
         $empresa = Empresa::where('user_id', $user->id)->first();
-        $redes = Rede::where('empresa_id', $empresa->id)->get();
-        return view('dashboard.index', compact('redes'));
+        $rede = Rede::where('empresa_id', $empresa->id)->first();
+        return view('dashboard.index', compact('rede'));
 
     }
 

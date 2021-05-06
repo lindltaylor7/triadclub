@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Rede;
 use App\Models\Empresa;
+use Illuminate\Support\Facades\Storage;
+
 
 class DashboardController extends Controller
 {
@@ -19,7 +21,7 @@ class DashboardController extends Controller
         $user = $request->user();
         $empresa = Empresa::where('user_id', $user->id)->first();
         $rede = Rede::where('empresa_id', $empresa->id)->first();
-        return view('dashboard.index', compact('rede'));
+        return view('dashboard.index', compact('rede', 'empresa'));
 
     }
 
@@ -75,9 +77,27 @@ class DashboardController extends Controller
      */
     public function update(Request $request, Rede $rede)
     {
+        //
         $rede->update($request->all());
+        $empresa=Empresa::where('id', $rede->empresa_id);
+        $empresa->update([
+            'cel'=>$request->cel
+        ]);
+        if($request->file('logo'))
+        {
+            $nuevo_logo=Storage::put('empresas', $request->file('logo'));
+            $empresa->update([
+                'logo'=>$nuevo_logo
+            ]);
 
+        }
+    
+     
+    
+        
+        
         return redirect()->route('dash.redes.index');
+        //return $request->cel;
     }
 
     /**
